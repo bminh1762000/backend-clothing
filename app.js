@@ -20,11 +20,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
-app.use("/shop", shopRoutes);
+app.use("/api/shop", shopRoutes);
 
-app.use("/preview", directoryRoutes);
+app.use("/api/preview", directoryRoutes);
 
 app.use((error, req, res, next) => {
   const status = error.statusCode || 500;
