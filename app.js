@@ -33,10 +33,13 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/shop", {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  })
+  .connect(
+    `mongodb://admin:admin%40123@103.82.24.207:27017/store?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`,
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }
+  )
   .then((result) => {
     console.log("Connected database");
     app.listen(8080);
